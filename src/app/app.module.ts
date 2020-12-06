@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { DucksComponent } from './ducks/ducks.component';
 import {FormsModule} from '@angular/forms';
 import { DuckCreatorComponent } from './duck-creator/duck-creator.component';
+import { LogComponent } from './log/log.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DucksComponent,
-    DuckCreatorComponent
+    DuckCreatorComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,

@@ -20,15 +20,3 @@ h2{
 .green{
   color: green;
 }
-
-.button {
-  background: #7289da;
-  border-radius: 5px;
-  color: white;
-  border: none;
-  width: 8rem;
-  height: 2rem;
-  margin-bottom: 8px;
-  margin-right: .5rem;
-  font-weight: bold;
-}

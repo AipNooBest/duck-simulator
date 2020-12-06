@@ -1,6 +1,6 @@
-<div>
+<div class="justify">
   <label>
     <input #myInput type="text" (keyup.enter)="createDuck(myInput.value); myInput.value = '';"/>
   </label>
-  <button (click)="createDuck(myInput.value); myInput.value = ''">Создать уточку</button>
+  <button (click)="createDuck(myInput.value); myInput.value = ''" class="button create">Создать уточку</button>
 </div>

@@ -3,9 +3,9 @@
   <p>{{ "HP: " + duck.HP }}</p>
   <p>{{ "Возраст: " + duck.age + " лет" }}</p>
 
-  <div class="buttons">
+  <div class="justify">
     <button (click)="hit()" class="button">Ударить</button>
     <button (click)="feed()" class="button">Покормить</button>
-    <button (click)="duck.age = duck.age + 1" class="button">Подождать</button>
+    <button (click)="updateAge()" class="button">Подождать</button>
   </div>
 </div>

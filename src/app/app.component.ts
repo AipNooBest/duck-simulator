@@ -14,7 +14,11 @@ export interface Duck {
 })
 export class AppComponent {
   ducks: Duck[] = [];
+  messages: string[] = ['Вы открыли эту страницу'];
    killDuck(id: number): void{
     this.ducks = this.ducks.filter(duck => duck.id !== id);
    }
+  sendMessage(msg: string): void{
+    this.messages.unshift(msg);
+  }
 }

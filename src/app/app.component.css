@@ -4,13 +4,15 @@ h1 {
 .wrapper {
   padding-top: 0;
   margin-left: 2rem;
-  width: 600px;
+  width: 500px;
   color: white;
 }
 
-.rm {
-  background: red;
-  border-radius: 50%;
+.logger {
+  margin-left: 1rem;
+  margin-right: 3.8rem;
+  padding-top: 2rem;
+  width: 40rem;
+  height: auto;
   color: white;
-  border: none;
 }

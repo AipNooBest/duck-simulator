@@ -4,3 +4,25 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #36393f;
 }
+
+app-root{
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background: #7289da;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  width: 8rem;
+  height: 2rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.justify{
+  display: flex;
+  justify-content: space-between;
+}

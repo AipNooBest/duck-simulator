@@ -1,0 +1,16 @@
+.create{
+  margin: 0;
+  padding: 0;
+}
+
+input{
+  background-color: #40444b;
+  color: white;
+  border-radius: 8px;
+  height: 30px;
+  width: 20rem;
+  padding-left: 10px;
+  border-style: unset;
+  margin-right: 1rem;
+  outline: none;
+}
