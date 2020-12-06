@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h1>Уточки-ки-ки</h1>
+  <hr>
+    <app-duck-creator
+    [ducks] = "ducks"
+    ></app-duck-creator>
+  <hr>
+
+  <div>
+    <app-ducks
+      *ngFor="let duck of ducks;"
+      [duck]="duck"
+      (killDuck)="killDuck($event)"
+    ></app-ducks>
+  </div>
+</div>

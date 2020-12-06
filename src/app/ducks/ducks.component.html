@@ -1,0 +1,11 @@
+<div class="ducks">
+  <h2>{{ duck.name }}</h2>
+  <p>{{ "HP: " + duck.HP }}</p>
+  <p>{{ "Возраст: " + duck.age + " лет" }}</p>
+
+  <div class="buttons">
+    <button (click)="hit()" class="button">Ударить</button>
+    <button (click)="feed()" class="button">Покормить</button>
+    <button (click)="duck.age = duck.age + 1" class="button">Подождать</button>
+  </div>
+</div>

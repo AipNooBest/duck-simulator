@@ -1,0 +1,6 @@
+<div>
+  <label>
+    <input #myInput type="text" (keyup.enter)="createDuck(myInput.value); myInput.value = '';"/>
+  </label>
+  <button (click)="createDuck(myInput.value); myInput.value = ''">Создать уточку</button>
+</div>
