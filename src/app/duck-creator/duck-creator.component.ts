@@ -9,11 +9,13 @@ import {Duck} from '../app.component';
 export class DuckCreatorComponent implements OnInit {
   @Input() ducks: Duck[];
   createDuck(name): void{
+    if (name.trim() === '') { return; }
     this.ducks.push({
       id: Date.now(),
       name,
       HP: 100,
       age: 0,
+      hunger: 100,
     });
   }
   ngOnInit(): void {}

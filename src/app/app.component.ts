@@ -5,6 +5,7 @@ export interface Duck {
   name: string;
   age: number;
   HP: number;
+  hunger: number;
 }
 
 @Component({
@@ -14,7 +15,7 @@ export interface Duck {
 })
 export class AppComponent {
   ducks: Duck[] = [];
-  messages: string[] = ['Вы открыли эту страницу'];
+  messages: string[] = [];
    killDuck(id: number): void{
     this.ducks = this.ducks.filter(duck => duck.id !== id);
    }

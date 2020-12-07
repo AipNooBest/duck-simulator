@@ -1,11 +1,17 @@
 <div class="ducks">
   <h2>{{ duck.name }}</h2>
   <p>{{ "HP: " + duck.HP }}</p>
-  <p>{{ "Возраст: " + duck.age + " лет" }}</p>
+  <p>{{ "Возраст: " + duck.age + " дней" }}</p>
 
   <div class="justify">
     <button (click)="hit()" class="button">Ударить</button>
     <button (click)="feed()" class="button">Покормить</button>
     <button (click)="updateAge()" class="button">Подождать</button>
   </div>
+  <form class="scale">
+    <form class="scale" [ngStyle]="{
+      background: 'green',
+      width: duck.hunger + '%'
+    }"></form>
+  </form>
 </div>
