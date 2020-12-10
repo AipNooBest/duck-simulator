@@ -9,10 +9,27 @@ h1 {
 }
 
 .logger {
-  margin-left: 1rem;
-  margin-right: 3.8rem;
+  position: absolute;
+  top: 350px;
+  margin-left: 2rem;
   padding-top: 2rem;
-  width: 40rem;
-  height: auto;
+  width: 500px;
+  height: 300px;
   color: white;
+}
+
+.leftColumn {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.lake {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
 }

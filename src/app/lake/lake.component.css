@@ -1,0 +1,16 @@
+.water{
+  height: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border-width: 1px;
+  background-color: deepskyblue;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.duck {
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  position: sticky;
+}
