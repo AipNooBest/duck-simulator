@@ -21,24 +21,26 @@ export class DucksComponent implements OnInit {
       this.duck.HP += 10;
     }
     if (this.duck.hunger < 100){
-      this.duck.hunger += 10;
+      if (this.duck.hunger < 90) { this.duck.hunger += 10; }
+      else { this.duck.hunger = 100; }
     }
   }
-  updateAge(): void{
-    this.duck.age += 1;
-    this.duck.hunger -= 10;
-    if (Math.random() * 4000 <= this.duck.age){
-      this.kill(this.duck.id, 'старости в возрасте ' + this.formatAge(this.duck.age));
-    }
-    if (this.duck.hunger === 0) {
-      this.kill(this.duck.id, 'голода');
-    }
-  }
+  // updateAge(): void{
+  //   this.duck.age += 1;
+  //   this.duck.hunger -= 5;
+  //   if (Math.random() * 6000 <= this.duck.age){
+  //     this.kill(this.duck.id, 'старости в возрасте ' + this.formatAge(this.duck.age));
+  //   }
+  //   if (this.duck.hunger === 0) {
+  //     this.kill(this.duck.id, 'голода');
+  //   }
+  // }
   kill(id: number, reason: string): void{
     this.killDuck.emit(id);
     this.sendMessage.emit('Уточка по имени ' + this.duck.name + ' умерла от ' + reason);
   }
-  formatAge(days): string{
+  nothing(): void{  }
+  formatAge(days: number, version: number): string{
     let month = 0;
     let year = 0;
     let resultString = '';
@@ -51,12 +53,15 @@ export class DucksComponent implements OnInit {
       }
     }
     if (year !== 0){
-      resultString += year + this.formatRuDate(year, 'года', 'лет', 'лет') + ', ';
+      if (version === 1) { resultString += year + this.formatRuDate(year, 'года', 'лет', 'лет') + ', '; }
+      else { resultString += year + this.formatRuDate(year, 'год', 'года', 'лет') + ', '; }
     }
     if (month !== 0){
-      resultString += month + this.formatRuDate(month, 'месяца', 'месяцев', 'месяцев') + ' и ';
+      if (version === 1) { resultString += month + this.formatRuDate(month, 'месяца', 'месяцев', 'месяцев') + ' и '; }
+      else { resultString += month + this.formatRuDate(month, 'месяц', 'месяца', 'месяцев') + ' и '; }
     }
-    resultString += days + this.formatRuDate(days, 'дня', 'дней', 'дней');
+    if (version === 1) { resultString += days + this.formatRuDate(days, 'дня', 'дней', 'дней'); }
+    else { resultString += days + this.formatRuDate(days, 'день', 'дня', 'дней'); }
     return resultString;
   }
   formatRuDate(date: number, first: string, twoToFour: string, word: string): string{
@@ -74,5 +79,16 @@ export class DucksComponent implements OnInit {
     }
     return ' ' + word;
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setInterval(() => {
+      this.duck.hunger -= 10;
+      this.duck.age += 1;
+      if (Math.random() * 6000 <= this.duck.age){
+        this.kill(this.duck.id, 'старости в возрасте ' + this.formatAge(this.duck.age, 1));
+      }
+      if (this.duck.hunger === 0) {
+        this.kill(this.duck.id, 'голода');
+      }
+    }, 1000);
+  }
 }

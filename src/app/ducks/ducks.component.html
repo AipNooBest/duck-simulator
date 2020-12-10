@@ -1,12 +1,12 @@
 <div class="ducks">
   <h2>{{ duck.name }}</h2>
   <p>{{ "HP: " + duck.HP }}</p>
-  <p>{{ "Возраст: " + duck.age + " дней" }}</p>
+  <p>{{ "Возраст: " + formatAge(duck.age, 0)}}</p>
 
   <div class="justify">
     <button (click)="hit()" class="button">Ударить</button>
     <button (click)="feed()" class="button">Покормить</button>
-    <button (click)="updateAge()" class="button">Подождать</button>
+    <button (click)="nothing()" class="button">???</button>
   </div>
   <form class="scale">
     <form class="scale" [ngStyle]="{
